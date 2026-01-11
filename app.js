@@ -43,15 +43,39 @@ function checkAge(userName, age){
     }
 }
 
-checkAge("Aaron", 40);
-checkAge("Clara", 15);
-checkAge();
+// checkAge("Aaron", 40);
+// checkAge("Clara", 15);
+// checkAge();
 
 // Exercise 3 Section
 console.log("EXERCISE 3:\n==========\n");
 
+function whichQuadrant(x, y) {
+    if (x === 0 && y === 0) {
+        console.log(`(${x}, ${y} is at the origin)`);
+    } else if (x === 0) {
+        console.log(`${x}, ${y} is on the y axis`);
+    } else if (y === 0) {
+        console.log(`${x}, ${y} is on the x axis`);
+    } else if (x > 0 && y > 0) {
+        console.log(`${x}, ${y} is in Quadrant 1`);
+    } else if (x < 0 && y > 0) {
+        console.log(`${x}, ${y} is in Quadrant 2`);
+    } else if (x < 0 && y < 0) {
+        console.log(`${x}, ${y} is in Quadrant 3`);
+    } else {
+        console.log(`${x}, ${y} is in Quadrant 4`);
+    }
+}
+
+whichQuadrant(3, 5);
+whichQuadrant(-2, 0);
+whichQuadrant(6, -2);
+
 // Exercise 4 Section
 console.log("EXERCISE 4:\n==========\n");
+
+
 
 // Exercise 5 Section
 console.log("EXERCISE 5:\n==========\n");
