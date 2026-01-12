@@ -114,23 +114,23 @@ function dataPlanUsage(planLimit, day, usage) {
     let statusMessage;
 
     console.log(`${day} days used, ${periodLength - day} days remaining`);
-    console.log(`Average daily use: ${usage / day} GB/day`);
+    console.log(`Average daily use: ${(usage / day).toFixed()} GB/day`);
 
     if (currentAverageUse > projectedAverage) {
         statusMessage = "EXCEEDING";
 
-        console.log(`You are ${statusMessage} your average daily use (${currentAverageUse}), continuing this high usage, you'll exceed your data plan by ${currentAverageUse * periodLength - planLimit} GB.`);
+        console.log(`You are ${statusMessage} your average daily use (${currentAverageUse.toFixed()}), continuing this high usage, you'll exceed your data plan by ${currentAverageUse * periodLength - planLimit} GB.`);
     } else if (currentAverageUse < projectedAverage) {
         statusMessage = "UNDER";
          console.log(`You are ${statusMessage} your average daily use.`);
-    } else if (currentAverage == projectedAverage) {
+    } else if (currentAverageUse == projectedAverage) {
         statusMessage = "AT";
         console.log(`You are ${statusMessage} your intended daily use.`);
     }
     
     
 
-    console.log(`To stay below your data plan, use no more than ${planLimit / periodLength} GB/day.`);
+    console.log(`To stay below your data plan, use no more than ${periodLength - day} GB/day.`);
 
 
 }
