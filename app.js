@@ -130,7 +130,7 @@ function dataPlanUsage(planLimit, day, usage) {
     
     
 
-    console.log(`To stay below your data plan, use no more than ${periodLength - day} GB/day.`);
+    console.log(`To stay below your data plan, use no more than ${(remainingData / (periodLength - day)).toFixed()} GB/day.`);
 
 
 }
