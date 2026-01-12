@@ -16,10 +16,11 @@ function printOdds(count) {
     }
 }
 
-// printOdds(16);
-// printOdds(100);
-// printOdds(-6);
+printOdds(16);
+printOdds(100);
+printOdds(-6);
 
+console.log("==========\n");
 // Exercise 2 Section
 console.log("EXERCISE 2:\n==========\n");
 
@@ -43,10 +44,11 @@ function checkAge(userName, age){
     }
 }
 
-// checkAge("Aaron", 40);
-// checkAge("Clara", 15);
-// checkAge();
+checkAge("Aaron", 40);
+checkAge("Clara", 15);
+checkAge();
 
+console.log("==========\n");
 // Exercise 3 Section
 console.log("EXERCISE 3:\n==========\n");
 
@@ -72,6 +74,7 @@ whichQuadrant(3, 5);
 whichQuadrant(-2, 0);
 whichQuadrant(6, -2);
 
+console.log("==========\n");
 // Exercise 4 Section
 console.log("EXERCISE 4:\n==========\n");
 
@@ -99,5 +102,45 @@ console.log(triangleType(3, 4, 2));
 console.log(triangleType(4, 4, 2));
 console.log(triangleType(1, 1, 2));
 
+console.log("==========\n");
 // Exercise 5 Section
 console.log("EXERCISE 5:\n==========\n");
+
+function dataPlanUsage(planLimit, day, usage) {
+    let periodLength = 30;
+    let currentAverageUse = usage / day;
+    let projectedAverage = planLimit / periodLength;
+    let remainingData = planLimit - usage;
+    let statusMessage;
+
+    console.log(`${day} days used, ${periodLength - day} days remaining`);
+    console.log(`Average daily use: ${usage / day} GB/day`);
+
+    if (currentAverageUse > projectedAverage) {
+        statusMessage = "EXCEEDING";
+
+        console.log(`You are ${statusMessage} your average daily use (${currentAverageUse}), continuing this high usage, you'll exceed your data plan by ${currentAverageUse * periodLength - planLimit} GB.`);
+    } else if (currentAverageUse < projectedAverage) {
+        statusMessage = "UNDER";
+         console.log(`You are ${statusMessage} your average daily use.`);
+    } else if (currentAverage == projectedAverage) {
+        statusMessage = "AT";
+        console.log(`You are ${statusMessage} your intended daily use.`);
+    }
+    
+    
+
+    console.log(`To stay below your data plan, use no more than ${planLimit / periodLength} GB/day.`);
+
+
+}
+
+dataPlanUsage(50, 12, 25);
+console.log("\n============\n");
+dataPlanUsage(50, 16, 44);
+console.log("\n============\n");
+dataPlanUsage(50, 22, 36.66);
+console.log("\n============\n");
+dataPlanUsage(50, 8, 30);
+console.log("\n============\n");
+dataPlanUsage(50, 22, 10);
